@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './googleMap.scss'
 import GoogleMapReact from 'google-map-react'
+import MarkYourPlace from './MarkYourPlace/MarkYourPlace'
 
-const Marker = ({ text }: any) => <div>{text}</div>
+// const Marker = ({ text }: any) => <div>{text}</div>
 const Markers = ({ text }: any) => <div>{text}</div>
 
 const GoogleMap = (props: any) => {
@@ -33,10 +34,11 @@ const GoogleMap = (props: any) => {
           center={yourPosition}
           defaultZoom={zoom}
         >
-          <Marker
+          <MarkYourPlace
             lat={yourPosition.lat}
             lng={yourPosition.lng}
-            text="MY POSITION"
+            name="My Marker"
+            color="red"
           />
 
           <Markers lat={59.626338} lng={17.851603} text="PLACES" />

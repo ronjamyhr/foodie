@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.scss'
-import GoogleMap from './components/GoogleMap/GoogleMap'
+import Home from './components/Home/Home'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hej</h1>
-      <GoogleMap></GoogleMap>
+      <Home />
     </div>
   )
 }
