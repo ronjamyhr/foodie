@@ -10,12 +10,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk, { ThunkMiddleware } from 'redux-thunk'
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
-import {
-  createFirestoreInstance,
-  getFirestore,
-  reduxFirestore,
-} from 'redux-firestore'
-// import { AppActions } from './types/actionTypes'
+import { createFirestoreInstance, getFirestore, reduxFirestore } from 'redux-firestore'
 import 'firebase/firestore'
 import { rootReducer } from './store/reducers/rootReducer'
 

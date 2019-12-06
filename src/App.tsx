@@ -21,10 +21,7 @@ class App extends React.Component<{}, IState> {
 
   uiConfig = {
     signInFlow: 'popup',
-    signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    ],
+    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.FacebookAuthProvider.PROVIDER_ID],
     callbacks: {
       signInSuccessWithAuthResult: () => false,
     },
@@ -42,16 +39,11 @@ class App extends React.Component<{}, IState> {
         <Switch>
           {this.state.isSignedIn ? (
             <React.Fragment>
-              <button onClick={() => firebase.auth().signOut()}>
-                Sign Out!
-              </button>
+              <button onClick={() => firebase.auth().signOut()}>Sign Out!</button>
               <Route path="/" component={Home} />
             </React.Fragment>
           ) : (
-            <StyledFirebaseAuth
-              uiConfig={this.uiConfig}
-              firebaseAuth={firebase.auth()}
-            />
+            <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
           )}
         </Switch>
       </BrowserRouter>
