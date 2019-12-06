@@ -1,5 +1,11 @@
 export interface IFoodPlaces {
   id: string
-  hej: string
-  yey: string
+  name: string
+  adress: string
+  phoneNumber: number
+  image: string
+  shortDescription: string
+  longDescription: string
+  latitude: any
+  longitude: any
 }
