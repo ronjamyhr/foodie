@@ -6,6 +6,6 @@ export interface IFoodPlaces {
   image: string
   shortDescription: string
   longDescription: string
-  latitude: any
-  longitude: any
+  latitude: number
+  longitude: number
 }
