@@ -1,17 +1,14 @@
 import React from 'react'
-import './App.scss'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import Home from './components/Home/Home'
+import './auth.scss'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import Auth from './components/Auth/Auth'
 
 interface IState {
   isSignedIn: boolean
 }
 
-class App extends React.Component<{}, IState> {
+class Auth extends React.Component<{}, IState> {
   constructor(props: any) {
     super(props)
 
@@ -35,22 +32,19 @@ class App extends React.Component<{}, IState> {
   }
 
   render() {
+    console.log('Korv:', firebase.auth())
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Auth} />
-          </Switch>
-          {/* {this.state.isSignedIn ? (
-            <div>Signed In</div>
-          ) : (
-            <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
-          )} */}
-        </div>
-      </BrowserRouter>
+      <div>
+        <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
+
+        {firebase.auth().currentUser && (
+          <div></div>
+          // <h1>{firebase.auth().currentUser.displayName}</h1>
+        )}
+        {/* <p>{firebase.auth().currentUser && firebase.auth().currentUser.displayName}</p>  */}
+      </div>
     )
   }
 }
 
-export default App
+export default Auth
