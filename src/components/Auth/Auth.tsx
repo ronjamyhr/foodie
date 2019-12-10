@@ -32,16 +32,19 @@ class Auth extends React.Component<{}, IState> {
   }
 
   render() {
-    console.log('Korv:', firebase.auth())
+    // console.log('Korv:', firebase.auth())
     return (
       <div>
-        <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
-
-        {firebase.auth().currentUser && (
-          <div></div>
-          // <h1>{firebase.auth().currentUser.displayName}</h1>
-        )}
-        {/* <p>{firebase.auth().currentUser && firebase.auth().currentUser.displayName}</p>  */}
+        <div className="login-container">
+          <div className="logo">Foodie</div>
+          <div className="content">
+            <p>We at foodie want you to find what you are looking for quickly and easily near you.</p>
+          </div>
+          <div className="signin-text">Sign in</div>
+          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
+          {/* {firebase.auth().currentUser.displayName } */}
+          {/* <p>{firebase.auth().currentUser && firebase.auth().currentUser.displayName}</p> */}
+        </div>
       </div>
     )
   }
