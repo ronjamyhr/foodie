@@ -1,48 +1,54 @@
 import React, { useState, useEffect } from 'react'
 import './googleMap.scss'
-import GoogleMapReact from 'google-map-react'
-import MarkYourPlace from './MarkYourPlace/MarkYourPlace'
-import MarkFoodPlaces from './MarkFoodPlaces/MarkFoodPlaces'
 import { IFoodPlaces } from '../../../types/FoodPlaces'
 import { AppState } from './../../../index'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
+import { GoogleMapProvider, MapBox, Marker } from '@googlemap-react/core'
+import Markers from './Markers/Markers'
 
 const GoogleMap = ({ places }: LinkStateProps) => {
-  const [yourPosition, setYourPosition] = useState<any>({
-    lat: null,
-    lng: null,
-  })
-  const [zoom] = useState<number>(15)
+  const [center, setCenter] = useState<any>({ lat: 0, lng: 0 })
+
+  const googleApiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        setYourPosition({
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition((position: Position) =>
+        setCenter({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         })
-      },
-      error => console.log(error)
-    )
+      )
   }, [])
-
-  const Markers =
-    places && places.map(place => <MarkFoodPlaces key={place.id} lat={place.latitude} lng={place.longitude} />)
 
   return (
     <div className="google-map-container">
-      <div className="google-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_API_KEY}` }}
-          center={yourPosition}
-          defaultZoom={zoom}
-        >
-          <MarkYourPlace lat={yourPosition.lat} lng={yourPosition.lng} />
-          {Markers}
-        </GoogleMapReact>
-      </div>
+      <GoogleMapProvider>
+        <MapBox
+          apiKey={googleApiKey}
+          opts={{
+            center: center,
+            zoom: 15,
+          }}
+        />
+        <Marker
+          opts={{
+            position: {
+              lat: center.lat,
+              lng: center.lng,
+            },
+          }}
+        />
+
+        {places &&
+          places.map(place => (
+            <li key={place.id}>
+              <Markers result={place} />
+            </li>
+          ))}
+      </GoogleMapProvider>
     </div>
   )
 }
