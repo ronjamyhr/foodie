@@ -25,6 +25,13 @@ const Markers = ({ result }: IProps) => {
             lat: result.latitude,
             lng: result.longitude,
           },
+          icon: {
+            path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
+            fillColor: '#000000',
+            fillOpacity: 1,
+            strokeWeight: 0.8,
+            scale: 0.5,
+          },
         }}
       />
       <InfoWindow
@@ -40,13 +47,6 @@ const Markers = ({ result }: IProps) => {
           <Link className="link" to="/">
             <button className="button">Info</button>
           </Link>
-          {/* <button
-            onClick={() => {
-              alert('Hello')
-            }}
-          >
-            Ska gå till info om matstället
-          </button> */}
         </div>
       </InfoWindow>
     </React.Fragment>
