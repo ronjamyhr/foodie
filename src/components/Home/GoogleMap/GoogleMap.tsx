@@ -39,6 +39,13 @@ const GoogleMap = ({ places }: LinkStateProps) => {
               lat: center.lat,
               lng: center.lng,
             },
+            icon: {
+              path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
+              fillColor: '#ff0000',
+              fillOpacity: 0.6,
+              strokeWeight: 0,
+              scale: 0.3,
+            },
           }}
         />
 
@@ -57,7 +64,7 @@ interface LinkStateProps {
   places: IFoodPlaces[]
 }
 
-const mapStateToProps = (state: AppState, ownProps: any): LinkStateProps => {
+const mapStateToProps = (state: AppState): LinkStateProps => {
   return {
     places: state.firestore.ordered.foodplaces,
   }
