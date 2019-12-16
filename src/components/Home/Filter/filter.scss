@@ -1,0 +1,44 @@
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  min-height: 150vh;
+
+  %background-filter-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .filter-drinks-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightblue;
+  }
+
+  .filter-dinner-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightcoral;
+  }
+
+  .filter-breakfast-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightgreen;
+  }
+
+  .filter-fika-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightpink;
+  }
+
+  .filter-lunch-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightsalmon;
+  }
+
+  .filter-snack-wrapper {
+    @extend %background-filter-wrapper;
+    background-color: lightseagreen;
+  }
+}
