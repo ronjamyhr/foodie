@@ -8,7 +8,6 @@
     text-align: center;
     width: 50vw;
     font-family: Lato;
-    // border: 1px solid red;
   }
 
   .card {
@@ -18,40 +17,47 @@
     width: 90vw;
     min-height: 60vh;
     background-color: #f5f4f4;
-    // border: 1px solid red;
+    border-radius: 20px;
 
     .user-info-wrapper {
       display: flex;
-      border: 1px solid green;
       align-items: center;
       height: 20vh;
 
       .user-icon {
-        border: 1px solid blue;
+        height: 45px;
+        width: 45px;
+        background-color: #e3b061;
+        color: white;
+        border-radius: 50%;
+        display: inline-block;
+        font-size: 2em;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        margin-left: 30px;
       }
 
       .user-text {
-        border: 1px solid blue;
-
         .user-title {
           margin: 0;
-          font-family: Lato;
+          font-family: 'Lato', sans-serif;
+          margin-left: 20px;
         }
         .user-name {
           margin: 0;
-          font-family: Lato;
+          font-family: 'Lato', sans-serif;
+          margin-left: 20px;
         }
       }
     }
 
     .my-favorites {
-      font-family: Lato;
+      font-family: 'Lato', sans-serif;
       font-size: 1.1em;
-      border: 1px solid green;
+      margin-left: 20px;
     }
 
     .favorite-places-wrapper {
-      border: 1px solid green;
       height: 100px;
     }
   }
@@ -63,11 +69,10 @@
     background-color: #494343;
     text-align: center;
     width: 90vw;
-    //border: 1px solid red;
 
     .button {
       color: white;
-      font-family: Lato;
+      font-family: 'Lato', sans-serif;
       font-size: 1.1em;
     }
   }
