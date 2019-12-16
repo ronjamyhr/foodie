@@ -14,13 +14,16 @@ const Auth = () => {
   }
 
   return (
-    <div>
-      <div className="login-container">
-        <div className="logo">Foodie</div>
-        <div className="content">
-          <p>We at foodie want you to find what you are looking for quickly and easily near you.</p>
-        </div>
-        <div className="signin-text">Sign in</div>
+    <div className="login-container">
+      <div className="information-wrapper">
+        <div className="foodie-logo">img tagg</div>
+        <h1 className="foodie-title">FOODIE</h1>
+        <p className="foodie-text">
+          We at foodie want you to find what you are looking for quickly and easily near you.
+        </p>
+      </div>
+      <div className="signin-wrapper">
+        <h2 className="signin-text">SIGN IN</h2>
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
       </div>
     </div>

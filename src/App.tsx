@@ -7,19 +7,21 @@ import Auth from './components/Auth/Auth'
 import { IUser } from './types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
+import User from './components/User/User'
 
-class App extends React.Component<IUser, {}> {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            {this.props.inloggedUser ? <Home /> : <Auth />}
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    )
-  }
+const App = ({ inloggedUser }: IUser) => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          {inloggedUser ? <Home /> : <Auth />}
+        </Route>
+        <Route exact path="/user">
+          {inloggedUser ? <User /> : <Auth />}
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 const mapStateToProps = (state: any): IUser => {

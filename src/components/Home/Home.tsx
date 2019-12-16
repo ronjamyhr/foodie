@@ -7,8 +7,6 @@ const Home = () => {
   return (
     <div>
       <GoogleMap />
-      <h2>Knapp:</h2>
-      <button onClick={() => firebase.auth().signOut()}>Sign Out!</button>
     </div>
   )
 }
