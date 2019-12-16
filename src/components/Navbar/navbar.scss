@@ -1,0 +1,35 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+
+  .places-wrapper,
+  .user-wrapper {
+    .fork-knife-icon,
+    .user-icon {
+      font-size: 1.5em;
+      color: #595959;
+    }
+
+    .fork-knife-text,
+    .user-text {
+      font-size: 0.8em;
+      font-weight: 300;
+      margin: 0;
+      color: #595959;
+      font-family: 'Lato', sans-serif;
+      text-decoration: none;
+    }
+  }
+
+  .logo-wrapper {
+    .foodie-logo {
+      width: 50px;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import { IUser } from './types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import User from './components/User/User'
+import Navbar from './components/Navbar/Navbar'
 
 const App = ({ inloggedUser }: IUser) => {
   return (
@@ -20,6 +21,7 @@ const App = ({ inloggedUser }: IUser) => {
           {inloggedUser ? <User /> : <Auth />}
         </Route>
       </Switch>
+      <Navbar />
     </BrowserRouter>
   )
 }
