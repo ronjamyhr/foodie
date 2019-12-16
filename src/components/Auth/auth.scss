@@ -1,24 +1,42 @@
 .login-container {
-  margin-top: 8em;
-}
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
-.logo {
-  text-align: center;
-  color: #ff3f2b;
-  font-size: 3rem;
-  font-family: caveat;
-}
+  .information-wrapper {
+    .foodie-logo {
+      text-align: center;
+      border: 1px solid red;
+    }
 
-.content p {
-  font-family: Lato, sans-serif;
-  margin-bottom: 1.5em;
-  text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+    .foodie-title {
+      margin: 0;
+      text-align: center;
+      font-size: 3rem;
+      font-family: Lato;
+      border: 1px solid red;
+    }
 
-.signin-text {
-  text-align: center;
-  font-size: 1rem;
-  font-family: Lato, sans-serif;
+    .foodie-text {
+      font-family: Lato, sans-serif;
+      margin-bottom: 1.5em;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 1px solid red;
+    }
+  }
+
+  .signin-wrapper {
+    border: 1px solid blue;
+
+    .signin-text {
+      text-align: center;
+      font-family: Lato, sans-serif;
+      font-size: 1.4em;
+    }
+  }
 }

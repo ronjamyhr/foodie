@@ -1,0 +1,74 @@
+.user-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .user-heading {
+    text-align: center;
+    width: 50vw;
+    font-family: Lato;
+    // border: 1px solid red;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: auto;
+    width: 90vw;
+    min-height: 60vh;
+    background-color: #f5f4f4;
+    // border: 1px solid red;
+
+    .user-info-wrapper {
+      display: flex;
+      border: 1px solid green;
+      align-items: center;
+      height: 20vh;
+
+      .user-icon {
+        border: 1px solid blue;
+      }
+
+      .user-text {
+        border: 1px solid blue;
+
+        .user-title {
+          margin: 0;
+          font-family: Lato;
+        }
+        .user-name {
+          margin: 0;
+          font-family: Lato;
+        }
+      }
+    }
+
+    .my-favorites {
+      font-family: Lato;
+      font-size: 1.1em;
+      border: 1px solid green;
+    }
+
+    .favorite-places-wrapper {
+      border: 1px solid green;
+      height: 100px;
+    }
+  }
+
+  .sign-out-button {
+    margin-top: 1.8em;
+    border: none;
+    padding: 1em 0;
+    background-color: #494343;
+    text-align: center;
+    width: 90vw;
+    //border: 1px solid red;
+
+    .button {
+      color: white;
+      font-family: Lato;
+      font-size: 1.1em;
+    }
+  }
+}

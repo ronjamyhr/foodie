@@ -8,13 +8,23 @@ import { connect } from 'react-redux'
 const User = ({ inloggedUser }: IUser) => {
   return (
     <div className="user-container">
-      <h1>USER</h1>
+      <h1 className="user-heading">USER</h1>
       <div className="card">
-        <div className="user-title">Logged in as</div>
-        <p>{inloggedUser}</p>
-        <div className="my-favorites">My favorites</div>
+        <div className="user-info-wrapper">
+          <div className="user-icon">IKON</div>
+          <div className="user-text">
+            <h2 className="user-title">Logged in as</h2>
+            <p className="user-name">{inloggedUser}</p>
+          </div>
+        </div>
+        <h2 className="my-favorites">My favorites</h2>
+        <div className="favorite-places-wrapper"></div>
       </div>
-      <button onClick={() => firebase.auth().signOut()}>Sign Out!</button>
+      <div className="sign-out-button">
+        <button className="button" onClick={() => firebase.auth().signOut()}>
+          LOG OUT
+        </button>
+      </div>
     </div>
   )
 }
