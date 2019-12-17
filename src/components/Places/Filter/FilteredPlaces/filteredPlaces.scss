@@ -1,0 +1,47 @@
+.filtered-places-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f4f4;
+  width: 90vw;
+  border-radius: 10px;
+  padding: 1em 0;
+  margin-top: 1em;
+
+  .place-image-frame {
+    margin: 1em;
+    width: 100px;
+    height: 80px;
+    overflow: hidden;
+
+    .place-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .place-description {
+    margin-right: 0.5em;
+
+    .place-name {
+      margin-bottom: 0.5em;
+      margin-top: 0;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+
+    .place-adress {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9em;
+      font-weight: 300;
+    }
+
+    .place-short-description {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1em;
+    }
+  }
+}
