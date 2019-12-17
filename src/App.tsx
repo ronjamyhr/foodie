@@ -29,7 +29,7 @@ const App = ({ inloggedUser }: IUser) => {
           {inloggedUser ? <Filter /> : <Auth />}
         </Route>
       </Switch>
-      <Navbar />
+      {inloggedUser ? <Navbar /> : null}
     </BrowserRouter>
   )
 }
