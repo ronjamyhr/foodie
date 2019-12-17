@@ -37,27 +37,27 @@ const Filter = ({ places }: LinkStateProps) => {
       <div className="filter-icons-wrapper">
         <div onClick={() => filteredComponent('drinks')} className="filter-drinks-wrapper">
           <FontAwesomeIcon className="icon" icon={faGlassMartiniAlt} />
-          <p>Drinks</p>
+          <p className="filter-text">Drinks</p>
         </div>
         <div onClick={() => filteredComponent('dinner')} className="filter-dinner-wrapper">
           <FontAwesomeIcon className="icon" icon={faConciergeBell} />
-          <p>Dinner</p>
+          <p className="filter-text">Dinner</p>
         </div>
         <div onClick={() => filteredComponent('breakfast')} className="filter-breakfast-wrapper">
           <FontAwesomeIcon className="icon" icon={faBreadSlice} />
-          <p>Breakfast</p>
+          <p className="filter-text">Breakfast</p>
         </div>
         <div onClick={() => filteredComponent('fika')} className="filter-fika-wrapper">
           <FontAwesomeIcon className="icon" icon={faMugHot} />
-          <p>Fika</p>
+          <p className="filter-text">Fika</p>
         </div>
         <div onClick={() => filteredComponent('lunch')} className="filter-lunch-wrapper">
           <FontAwesomeIcon className="icon" icon={faHamburger} />
-          <p>Lunch</p>
+          <p className="filter-text">Lunch</p>
         </div>
         <div onClick={() => filteredComponent('snack')} className="filter-snack-wrapper">
           <FontAwesomeIcon className="icon" icon={faCookieBite} />
-          <p>Snack</p>
+          <p className="filter-text">Snack</p>
         </div>
       </div>
 

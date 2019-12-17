@@ -39,6 +39,46 @@
       font-weight: 300;
     }
 
+    .icon {
+      font-size: 2em;
+      color: #ffffff;
+    }
+
+    .filter-text {
+      @extend %filter-text;
+      margin: 0.5em 0 0 0;
+    }
+
+    .filter-drinks-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #e3b061;
+    }
+
+    .filter-dinner-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #4c89ab;
+    }
+
+    .filter-breakfast-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #494343;
+    }
+
+    .filter-fika-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #56a287;
+    }
+
+    .filter-lunch-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #56a287;
+    }
+
+    .filter-snack-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #e3b061;
+    }
+
     .filter-drinks-wrapper:active,
     .filter-dinner-wrapper:active,
     .filter-breakfast-wrapper:active,
@@ -46,50 +86,6 @@
     .filter-lunch-wrapper:active,
     .filter-snack-wrapper:active {
       filter: brightness(50%);
-    }
-
-    .icon {
-      font-size: 2em;
-    }
-
-    p {
-      margin: 0.5em 0 0 0;
-    }
-
-    .filter-drinks-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #e3b061;
-    }
-
-    .filter-dinner-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #4c89ab;
-    }
-
-    .filter-breakfast-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #494343;
-    }
-
-    .filter-fika-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #56a287;
-    }
-
-    .filter-lunch-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #56a287;
-    }
-
-    .filter-snack-wrapper {
-      @extend %background-filter-wrapper;
-      @extend %filter-text;
-      background-color: #e3b061;
     }
   }
 
