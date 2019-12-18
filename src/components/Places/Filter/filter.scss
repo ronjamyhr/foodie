@@ -1,0 +1,105 @@
+.filter-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5em;
+
+  .filter-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+
+  .filter-icons-wrapper {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f5f4f4;
+    border-radius: 10px;
+    padding: 2em 0;
+
+    %background-filter-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 1em;
+      cursor: pointer;
+    }
+
+    %filter-text {
+      color: #ffffff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+    }
+
+    .icon {
+      font-size: 2em;
+      color: #ffffff;
+    }
+
+    .filter-text {
+      @extend %filter-text;
+      margin: 0.5em 0 0 0;
+    }
+
+    .filter-drinks-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #e3b061;
+    }
+
+    .filter-dinner-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #4c89ab;
+    }
+
+    .filter-breakfast-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #494343;
+    }
+
+    .filter-fika-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #56a287;
+    }
+
+    .filter-lunch-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #56a287;
+    }
+
+    .filter-snack-wrapper {
+      @extend %background-filter-wrapper;
+      background-color: #e3b061;
+    }
+
+    .filter-drinks-wrapper:active,
+    .filter-dinner-wrapper:active,
+    .filter-breakfast-wrapper:active,
+    .filter-fika-wrapper:active,
+    .filter-lunch-wrapper:active,
+    .filter-snack-wrapper:active {
+      filter: brightness(50%);
+    }
+  }
+
+  .filter-result-container {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .filter-result-heading {
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+  }
+}

@@ -8,4 +8,5 @@ export interface IFoodPlaces {
   longDescription: string
   latitude: number
   longitude: number
+  type: string
 }
