@@ -1,0 +1,42 @@
+.info-window-container {
+  .info-window-wrapper-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .info-window-image-frame {
+      margin: 1em;
+      width: 70px;
+      height: 50px;
+      overflow: hidden;
+      margin-left: 0;
+
+      .info-window-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .info-window-heading {
+      margin-bottom: 0.5em;
+      margin-top: 0;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+  }
+
+  .info-window-wrapper-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .info-window-adress {
+      width: 200px;
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9em;
+      font-weight: 300;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import './filter.scss'
 import { IFoodPlaces } from '../../../types/FoodPlaces'
 import { AppState } from '../../..'

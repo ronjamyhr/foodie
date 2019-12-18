@@ -27,13 +27,14 @@ const Markers = ({ result }: IProps) => {
           },
           icon: {
             path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
-            fillColor: '#000000',
-            fillOpacity: 1,
-            strokeWeight: 0.8,
-            scale: 0.5,
+            scale: 0.8,
+            fillColor: '#494343',
+            fillOpacity: 0.8,
+            strokeOpacity: 0,
           },
         }}
       />
+
       <InfoWindow
         anchorId={result.id}
         visible={infoWindow}
@@ -41,12 +42,24 @@ const Markers = ({ result }: IProps) => {
           setInfoWindow(false)
         }}
       >
-        <div>
-          <h1>{result.name}</h1>
-          <p>{result.adress}</p>
-          <Link className="link" to="/">
-            <button className="button">Info</button>
-          </Link>
+        <div className="info-window-container">
+          <div className="info-window-wrapper-top">
+            <div className="info-window-image-frame">
+              <img
+                className="info-window-image"
+                src={require(`./../../../../assets/${result.image}`)}
+                alt={result.name}
+                title={result.name}
+              />
+            </div>
+            <h1 className="info-window-heading">{result.name}</h1>
+          </div>
+          <div className="info-window-wrapper-bottom">
+            <p className="info-window-adress">{result.adress}</p>
+            <Link className="link" to="/">
+              <button className="button">Info</button>
+            </Link>
+          </div>
         </div>
       </InfoWindow>
     </React.Fragment>

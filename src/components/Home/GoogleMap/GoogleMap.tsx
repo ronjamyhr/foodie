@@ -41,10 +41,10 @@ const GoogleMap = ({ places }: LinkStateProps) => {
             },
             icon: {
               path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
-              fillColor: '#ff0000',
+              fillColor: '#4C89AB',
               fillOpacity: 0.6,
               strokeWeight: 0,
-              scale: 0.3,
+              scale: 0.7,
             },
           }}
         />
