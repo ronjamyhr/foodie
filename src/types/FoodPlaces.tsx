@@ -3,7 +3,7 @@ export interface IFoodPlaces {
   url: string
   name: string
   adress: string
-  phoneNumber: number
+  phoneNumber: string
   image: string
   shortDescription: string
   longDescription: string
