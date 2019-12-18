@@ -16,6 +16,7 @@ import {
   faHamburger,
 } from '@fortawesome/free-solid-svg-icons'
 import { animateScroll as scroll } from 'react-scroll'
+import { NavLink } from 'react-router-dom'
 
 const Filter = ({ places }: LinkStateProps) => {
   const [filtered, setFiltered] = useState<boolean>(false)
@@ -66,7 +67,15 @@ const Filter = ({ places }: LinkStateProps) => {
         {filtered &&
           places
             .filter(place => place.type === filterType)
-            .map(place => <div key={place.id}>{<FilteredPlaces result={place} />}</div>)}
+            .map(place => (
+              <div key={place.id}>
+                {
+                  <NavLink className="place-link" exact to={`/place/${place.url}`}>
+                    <FilteredPlaces result={place} />
+                  </NavLink>
+                }
+              </div>
+            ))}
       </div>
     </div>
   )

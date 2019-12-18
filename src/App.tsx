@@ -11,6 +11,7 @@ import User from './components/User/User'
 import Navbar from './components/Navbar/Navbar'
 import Places from './components/Places/Places'
 import Filter from './components/Places/Filter/Filter'
+import Place from './components/Place/Place'
 
 const App = ({ inloggedUser }: IUser) => {
   return (
@@ -27,6 +28,9 @@ const App = ({ inloggedUser }: IUser) => {
         </Route>
         <Route exact path="/filter">
           {inloggedUser ? <Filter /> : <Auth />}
+        </Route>
+        <Route exact path="/place">
+          {inloggedUser ? <Place /> : <Auth />}
         </Route>
       </Switch>
       {inloggedUser ? <Navbar /> : null}

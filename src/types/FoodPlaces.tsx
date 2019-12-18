@@ -1,5 +1,6 @@
 export interface IFoodPlaces {
   id: string
+  url: string
   name: string
   adress: string
   phoneNumber: number
