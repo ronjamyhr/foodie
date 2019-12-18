@@ -14,11 +14,11 @@ const Navbar = () => {
           }}
           className="fork-knife-text"
           exact
-          to="/places"
+          to="/allplaces"
         >
           <FontAwesomeIcon className="fork-knife-icon" icon={faUtensils} />
           <br />
-          Places
+          All places
         </NavLink>
       </div>
       <div className="logo-wrapper">

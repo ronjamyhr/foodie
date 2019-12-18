@@ -15,51 +15,61 @@
     transition: 0.3s;
     margin: auto;
     width: 90vw;
-    min-height: 60vh;
+    min-height: 65vh;
     background-color: #f5f4f4;
     border-radius: 10px;
-    height: 65vh;
 
     .user-info-wrapper {
       display: flex;
       align-items: center;
+      justify-content: center;
       height: 20vh;
+      width: 80vw;
+      margin: 0;
 
-      .user-icon {
-        height: 45px;
-        width: 45px;
-        background-color: #e3b061;
-        color: white;
+      .user-icon-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
         border-radius: 50%;
-        display: inline-block;
-        font-size: 2em;
-        font-family: 'Lato', sans-serif;
-        text-align: center;
-        margin-left: 30px;
+        background-color: #e3b061;
+
+        .user-icon {
+          color: white;
+          font-size: 2.2em;
+          font-family: 'Montserrat', sans-serif;
+        }
       }
 
       .user-text {
         .user-title {
-          margin: 0;
-          font-family: 'Lato', sans-serif;
-          margin-left: 20px;
+          margin: 0 0 0.2em 0;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          margin-left: 1em;
         }
         .user-name {
           margin: 0;
           font-family: 'Lato', sans-serif;
-          margin-left: 20px;
+          font-size: 1.2em;
+          font-weight: 300;
+          margin-left: 1.3em;
         }
       }
     }
 
-    .my-favorites {
-      font-family: 'Lato', sans-serif;
-      font-size: 1.1em;
-      margin-left: 20px;
-    }
-
     .favorite-places-wrapper {
-      height: 100px;
+      display: flex;
+      height: 40vh;
+      width: 60vw;
+      margin: 0 2em;
+
+      .my-favorites {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3em;
+      }
     }
   }
 

@@ -20,7 +20,7 @@ const App = ({ inloggedUser }: IUser) => {
         <Route exact path="/">
           {inloggedUser ? <Home /> : <Auth />}
         </Route>
-        <Route exact path="/places">
+        <Route exact path="/allplaces">
           {inloggedUser ? <AllPlaces /> : <Auth />}
         </Route>
         <Route exact path="/user">
