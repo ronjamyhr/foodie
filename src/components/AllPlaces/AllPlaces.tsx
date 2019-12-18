@@ -13,7 +13,7 @@ import PlacesCards from '../PlacesCards/PlacesCards'
 const AllPlaces = ({ places }: LinkStateProps) => {
   return (
     <div className="all-places-container">
-      <h1 className="all-places-heading">PLACES</h1>
+      <h1 className="all-places-heading">ALL PLACES</h1>
 
       <NavLink className="filter-link" exact to="/filter">
         <FontAwesomeIcon className="icon" icon={faSlidersH} />
