@@ -24,7 +24,7 @@ const Auth = () => {
         />
         <h1 className="foodie-title">FOODIE</h1>
         <p className="foodie-text">
-          We at foodie want you to find what you are looking for quickly and easily near you.
+          We at Foodie want you to find what you are looking for quickly and easily near you.
         </p>
       </div>
       <div className="signin-wrapper">
