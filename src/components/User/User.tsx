@@ -1,6 +1,6 @@
 import React from 'react'
 import './user.scss'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import { IUser } from '../../types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
