@@ -5,9 +5,8 @@
   align-items: center;
 
   .user-heading {
-    text-align: center;
-    width: 50vw;
-    font-family: Lato;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
   }
 
   .card {
@@ -17,7 +16,8 @@
     width: 90vw;
     min-height: 60vh;
     background-color: #f5f4f4;
-    border-radius: 20px;
+    border-radius: 10px;
+    height: 65vh;
 
     .user-info-wrapper {
       display: flex;
@@ -63,7 +63,7 @@
   }
 
   .sign-out-button {
-    margin-top: 1.8em;
+    margin-top: 1.1em;
     border: none;
     padding: 1em 0;
     background-color: #494343;
@@ -74,6 +74,10 @@
       color: white;
       font-family: 'Lato', sans-serif;
       font-size: 1.1em;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
   }
 }

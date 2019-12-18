@@ -1,5 +1,6 @@
 import React from 'react'
 import './filteredPlaces.scss'
+import { NavLink } from 'react-router-dom'
 
 interface IProps {
   result: any
@@ -8,6 +9,10 @@ interface IProps {
 const FilteredPlaces = ({ result }: IProps) => {
   return (
     <div className="filtered-places-wrapper">
+      <NavLink className="place-link" exact to={`/place/${result.url}`}>
+        <p>{result.name}</p>
+      </NavLink>
+
       <div className="place-image-frame">
         <img
           className="place-image"
