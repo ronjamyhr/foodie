@@ -9,9 +9,9 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import User from './components/User/User'
 import Navbar from './components/Navbar/Navbar'
-import Places from './components/Places/Places'
-import Filter from './components/Places/Filter/Filter'
+import Filter from './components/AllPlaces/Filter/Filter'
 import Place from './components/Place/Place'
+import AllPlaces from './components/AllPlaces/AllPlaces'
 
 const App = ({ inloggedUser }: IUser) => {
   return (
@@ -21,7 +21,7 @@ const App = ({ inloggedUser }: IUser) => {
           {inloggedUser ? <Home /> : <Auth />}
         </Route>
         <Route exact path="/places">
-          {inloggedUser ? <Places /> : <Auth />}
+          {inloggedUser ? <AllPlaces /> : <Auth />}
         </Route>
         <Route exact path="/user">
           {inloggedUser ? <User /> : <Auth />}

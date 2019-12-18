@@ -1,4 +1,4 @@
-.filtered-places-wrapper {
+.places-card-wrapper {
   display: flex;
   align-items: center;
   background-color: #f5f4f4;
@@ -24,12 +24,17 @@
     margin-right: 0.5em;
     width: 220px;
 
-    .place-name {
-      margin-bottom: 0.5em;
-      margin-top: 0;
-      font-family: 'Lato', sans-serif;
-      font-weight: 600;
-      font-size: 1.3em;
+    .place-link {
+      text-decoration: none;
+      color: black;
+
+      .place-name {
+        margin-bottom: 0.5em;
+        margin-top: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1.3em;
+      }
     }
 
     .place-adress {

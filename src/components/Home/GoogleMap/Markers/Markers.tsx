@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './markers.scss'
 import { InfoWindow, Marker } from '@googlemap-react/core'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 interface IProps {
   result: any
@@ -52,13 +52,13 @@ const Markers = ({ result }: IProps) => {
                 title={result.name}
               />
             </div>
-            <h1 className="info-window-heading">{result.name}</h1>
+
+            <NavLink className="info-window-link" exact to={`/place/${result.url}`}>
+              <h1 className="info-window-heading">{result.name}</h1>
+            </NavLink>
           </div>
           <div className="info-window-wrapper-bottom">
             <p className="info-window-adress">{result.adress}</p>
-            <Link className="link" to="/">
-              <button className="button">Info</button>
-            </Link>
           </div>
         </div>
       </InfoWindow>
