@@ -29,7 +29,7 @@ const App = ({ inloggedUser }: IUser) => {
         <Route exact path="/filter">
           {inloggedUser ? <Filter /> : <Auth />}
         </Route>
-        <Route exact path="/place">
+        <Route exact path="/place/:url">
           {inloggedUser ? <Place /> : <Auth />}
         </Route>
       </Switch>
