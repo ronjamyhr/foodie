@@ -6,12 +6,13 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 
 const User = ({ inloggedUser }: IUser) => {
+  const firstCharacterOfInloggedUser = inloggedUser.charAt(0)
   return (
     <div className="user-container">
       <h1 className="user-heading">USER</h1>
       <div className="card">
         <div className="user-info-wrapper">
-          <div className="user-icon">IKON</div>
+          <p className="user-icon">{firstCharacterOfInloggedUser}</p>
           <div className="user-text">
             <h2 className="user-title">Logged in as</h2>
             <p className="user-name">{inloggedUser}</p>

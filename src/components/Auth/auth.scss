@@ -7,17 +7,18 @@
   justify-content: space-around;
 
   .information-wrapper {
-    .foodie-logo {
-      text-align: center;
-      border: 1px solid red;
+    .foodie-logo-login {
+      width: 50%;
+      margin-left: 95px;
+      margin-top: 30px;
     }
 
     .foodie-title {
       margin: 0;
+      margin-top: 30px;
       text-align: center;
       font-size: 3rem;
-      font-family: Lato;
-      border: 1px solid red;
+      font-family: 'Lato', sans-serif;
     }
 
     .foodie-text {
@@ -26,13 +27,10 @@
       text-align: center;
       padding-left: 20px;
       padding-right: 20px;
-      border: 1px solid red;
     }
   }
 
   .signin-wrapper {
-    border: 1px solid blue;
-
     .signin-text {
       text-align: center;
       font-family: Lato, sans-serif;

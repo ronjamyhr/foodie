@@ -16,7 +16,12 @@ const Auth = () => {
   return (
     <div className="login-container">
       <div className="information-wrapper">
-        <div className="foodie-logo">img tagg</div>
+        <img
+          className="foodie-logo-login"
+          src={require('./../../assets/logo-foodie.png')}
+          alt="Logotype of Foodie"
+          title="Foodie logo"
+        />
         <h1 className="foodie-title">FOODIE</h1>
         <p className="foodie-text">
           We at foodie want you to find what you are looking for quickly and easily near you.
