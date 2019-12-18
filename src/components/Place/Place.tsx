@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './place.scss'
 import { IFoodPlaces } from '../../types/FoodPlaces'
 import { AppState } from '../..'
@@ -26,16 +26,15 @@ const Place = ({ places }: LinkStateProps) => {
                   title={place.name}
                 />
               </div>
-              <div className="place-description">
-                <div className="place-info-wrapper">
-                  <p className="place-name">{place.name}</p>
-                  <p className="place-adress">{place.adress}</p>
-                  <p className="place-phone-number">{place.phoneNumber}</p>
-                </div>
-                <div className="place-text-wrapper">
-                  <p className="place-short-description">{place.shortDescription}</p>
-                  <p className="place-long-description">{place.longDescription}</p>
-                </div>
+
+              <div className="place-info-wrapper">
+                <p className="place-name">{place.name}</p>
+                <p className="place-adress">{place.adress}</p>
+                <p className="place-phone-number">{place.phoneNumber}</p>
+              </div>
+              <div className="place-text-wrapper">
+                <p className="place-short-description">{place.shortDescription}</p>
+                <p className="place-long-description">{place.longDescription}</p>
               </div>
             </div>
           ))}
@@ -65,5 +64,3 @@ export default compose<any>(
   ),
   firestoreConnect([{ collection: 'foodplaces' }])
 )(Place)
-
-// export default Place

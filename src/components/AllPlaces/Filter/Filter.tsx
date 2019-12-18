@@ -5,7 +5,6 @@ import { AppState } from '../../..'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
-import FilteredPlaces from './FilteredPlaces/FilteredPlaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGlassMartiniAlt,
@@ -16,6 +15,7 @@ import {
   faHamburger,
 } from '@fortawesome/free-solid-svg-icons'
 import { animateScroll as scroll } from 'react-scroll'
+import PlacesCards from '../../PlacesCards/PlacesCards'
 
 const Filter = ({ places }: LinkStateProps) => {
   const [filtered, setFiltered] = useState<boolean>(false)
@@ -66,7 +66,7 @@ const Filter = ({ places }: LinkStateProps) => {
         {filtered &&
           places
             .filter(place => place.type === filterType)
-            .map(place => <div key={place.id}>{<FilteredPlaces result={place} />}</div>)}
+            .map(place => <div key={place.id}>{<PlacesCards result={place} />}</div>)}
       </div>
     </div>
   )
