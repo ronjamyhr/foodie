@@ -15,25 +15,23 @@ import {
   faMugHot,
   faHamburger,
 } from '@fortawesome/free-solid-svg-icons'
+import { animateScroll as scroll } from 'react-scroll'
 
 const Filter = ({ places }: LinkStateProps) => {
   const [filtered, setFiltered] = useState<boolean>(false)
   const [filterType, setFilterType] = useState<string>('')
-
-  const resultsRef: any = useRef(null)
+  const resultsRef: any = React.createRef()
 
   const filteredComponent = (type: string) => {
-    window.scrollTo({
-      behavior: 'smooth',
-      top: resultsRef.current.offsetTop,
-    })
     setFiltered(true)
     setFilterType(type)
+    scroll.scrollTo(500)
   }
 
   return (
     <div className="filter-container">
       <h1 className="filter-heading">FILTER</h1>
+
       <div className="filter-icons-wrapper">
         <div onClick={() => filteredComponent('drinks')} className="filter-drinks-wrapper">
           <FontAwesomeIcon className="icon" icon={faGlassMartiniAlt} />
@@ -61,8 +59,10 @@ const Filter = ({ places }: LinkStateProps) => {
         </div>
       </div>
 
-      <div className="filter-result-container" ref={resultsRef}>
-        <h2 className="filter-result-heading">{filterType}</h2>
+      <div className="filter-result-container">
+        <h2 ref={resultsRef} className="filter-result-heading">
+          {filterType}
+        </h2>
         {filtered &&
           places
             .filter(place => place.type === filterType)
