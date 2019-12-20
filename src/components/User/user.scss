@@ -1,3 +1,5 @@
+@import './../../styles/variables.scss';
+
 .user-container {
   width: 100vw;
   display: flex;
@@ -6,7 +8,7 @@
   margin-bottom: 10vh;
 
   .user-heading {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $headers-font;
     font-weight: 300;
   }
 
@@ -16,7 +18,7 @@
     margin: auto;
     width: 90vw;
     min-height: 65vh;
-    background-color: #f5f4f4;
+    background-color: $card-color;
     border-radius: 10px;
 
     .user-info-wrapper {
@@ -39,20 +41,20 @@
         .user-icon {
           color: white;
           font-size: 2.2em;
-          font-family: 'Montserrat', sans-serif;
+          font-family: $headers-font;
         }
       }
 
       .user-text {
         .user-title {
           margin: 0 0 0.2em 0;
-          font-family: 'Montserrat', sans-serif;
+          font-family: $headers-font;
           font-weight: 600;
           margin-left: 1em;
         }
         .user-name {
           margin: 0;
-          font-family: 'Lato', sans-serif;
+          font-family: $content-font;
           font-size: 1.2em;
           font-weight: 300;
           margin-left: 1.3em;
@@ -67,7 +69,7 @@
       margin: 0 2em;
 
       .my-favorites {
-        font-family: 'Montserrat', sans-serif;
+        font-family: $headers-font;
         font-size: 1.3em;
       }
     }
@@ -77,14 +79,14 @@
     margin: 1.1em 0;
     border: none;
     padding: 1em 0;
-    background-color: #494343;
+    background-color: $detail-color-dark;
     text-align: center;
     width: 90vw;
 
     .link {
       text-decoration: none;
       color: white;
-      font-family: 'Lato', sans-serif;
+      font-family: $content-font;
       font-size: 1.1em;
       background-color: transparent;
       border: none;
