@@ -12,6 +12,7 @@ import Navbar from './components/Navbar/Navbar'
 import Filter from './components/AllPlaces/Filter/Filter'
 import Place from './components/Place/Place'
 import AllPlaces from './components/AllPlaces/AllPlaces'
+import NotFound from './components/NotFound/NotFound'
 
 const App = ({ inloggedUser }: IUser) => {
   return (
@@ -32,6 +33,7 @@ const App = ({ inloggedUser }: IUser) => {
         <Route exact path="/place/:url">
           {inloggedUser ? <Place /> : <Auth />}
         </Route>
+        <Route component={NotFound} />
       </Switch>
       {inloggedUser ? <Navbar /> : null}
     </BrowserRouter>
