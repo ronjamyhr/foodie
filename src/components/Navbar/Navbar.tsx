@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div className="navbar-container">
+    <nav className="navbar-container">
       <div className="places-wrapper">
         <NavLink
           activeStyle={{
@@ -45,7 +45,7 @@ const Navbar = () => {
           User
         </NavLink>
       </div>
-    </div>
+    </nav>
   )
 }
 

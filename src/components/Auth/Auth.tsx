@@ -14,8 +14,8 @@ const Auth = () => {
   }
 
   return (
-    <div className="login-container">
-      <div className="information-wrapper">
+    <main className="login-container">
+      <article className="information-wrapper">
         <img
           className="foodie-logo-login"
           src={require('./../../assets/logo-foodie.png')}
@@ -26,12 +26,12 @@ const Auth = () => {
         <p className="foodie-text">
           We at Foodie want you to find what you are looking for quickly and easily near you.
         </p>
-      </div>
+      </article>
       <div className="signin-wrapper">
         <h2 className="signin-text">SIGN IN</h2>
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
       </div>
-    </div>
+    </main>
   )
 }
 

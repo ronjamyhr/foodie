@@ -80,16 +80,18 @@
 
   .go-to-menu-button {
     margin: 1.1em 0;
+    border: none;
+    padding: 1em 0;
+    background-color: #4c89ab;
+    text-align: center;
+    width: 90vw;
 
-    .button {
-      font-family: $content-font;
-      font-size: 1.1em;
-      border: none;
-      padding: 1em 0;
-      background-color: #4c89ab;
-      text-align: center;
-      width: 90vw;
+    .link {
+      text-decoration: none;
       color: white;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1em;
+      background-color: transparent;
       border: none;
       outline: none;
       cursor: pointer;

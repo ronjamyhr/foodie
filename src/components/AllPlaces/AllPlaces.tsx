@@ -12,7 +12,7 @@ import PlacesCards from '../PlacesCards/PlacesCards'
 
 const AllPlaces = ({ places }: LinkStateProps) => {
   return (
-    <div className="all-places-container">
+    <main className="all-places-container">
       <h1 className="all-places-heading">ALL PLACES</h1>
 
       <NavLink className="filter-link" exact to="/filter">
@@ -21,9 +21,9 @@ const AllPlaces = ({ places }: LinkStateProps) => {
       </NavLink>
 
       <div className="all-places-wrapper">
-        {places && places.map(place => <div key={place.id}>{<PlacesCards result={place} />}</div>)}
+        {places && places.map(place => <div key={place.id}>{<PlacesCards place={place} />}</div>)}
       </div>
-    </div>
+    </main>
   )
 }
 
