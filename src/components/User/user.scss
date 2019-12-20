@@ -2,8 +2,15 @@
 
 .user-container {
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 10vh;
 
@@ -13,7 +20,10 @@
   }
 
   .card {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     margin: auto;
     width: 90vw;
@@ -22,16 +32,28 @@
     border-radius: 10px;
 
     .user-info-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       height: 20vh;
       width: 80vw;
       margin: 0;
 
       .user-icon-background {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         height: 60px;
         width: 60px;
@@ -63,6 +85,8 @@
     }
 
     .favorite-places-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       height: 40vh;
       width: 60vw;
