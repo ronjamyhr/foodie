@@ -1,3 +1,5 @@
+@import './../../../styles/variables.scss';
+
 .filter-container {
   width: 100vw;
   min-height: 100vh;
@@ -7,7 +9,7 @@
   margin-bottom: 10vh;
 
   .filter-heading {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $headers-font;
     font-weight: 300;
   }
 
@@ -17,7 +19,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #f5f4f4;
+    background-color: $card-color;
     border-radius: 10px;
     padding: 2em 0;
 
@@ -35,7 +37,7 @@
 
     %filter-text {
       color: #ffffff;
-      font-family: 'Lato', sans-serif;
+      font-family: $content-font;
       font-weight: 300;
     }
 
@@ -61,7 +63,7 @@
 
     .filter-breakfast-wrapper {
       @extend %background-filter-wrapper;
-      background-color: #494343;
+      background-color: $detail-color-dark;
     }
 
     .filter-fika-wrapper {
@@ -98,7 +100,7 @@
 
     .filter-result-heading {
       text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
+      font-family: $headers-font;
       font-weight: 300;
     }
   }

@@ -1,7 +1,9 @@
+@import './../../styles/variables.scss';
+
 .places-card-wrapper {
   display: flex;
   align-items: center;
-  background-color: #f5f4f4;
+  background-color: $card-color;
   width: 90vw;
   border-radius: 10px;
   padding: 1em 0;
@@ -31,7 +33,7 @@
       .place-name {
         margin-bottom: 0.5em;
         margin-top: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: $headers-font;
         font-weight: 600;
         font-size: 1.3em;
       }
@@ -39,14 +41,14 @@
 
     .place-adress {
       margin: 0;
-      font-family: 'Lato', sans-serif;
+      font-family: $content-font;
       font-size: 0.9em;
       font-weight: 300;
     }
 
     .place-short-description {
       margin: 0;
-      font-family: 'Lato', sans-serif;
+      font-family: $content-font;
       font-size: 1.1em;
     }
   }

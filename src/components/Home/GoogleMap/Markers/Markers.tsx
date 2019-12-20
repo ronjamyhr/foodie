@@ -28,7 +28,7 @@ const Markers = ({ result }: IProps) => {
           icon: {
             path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
             scale: 0.8,
-            fillColor: '#494343',
+            fillColor: '$detail-color-dark',
             fillOpacity: 0.8,
             strokeOpacity: 0,
           },

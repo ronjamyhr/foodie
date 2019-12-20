@@ -1,3 +1,5 @@
+@import './../../styles/variables.scss';
+
 .all-places-container {
   width: 100vw;
   min-height: 100vh;
@@ -7,7 +9,7 @@
   margin-bottom: 10vh;
 
   .all-places-heading {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $headers-font;
     font-weight: 300;
   }
 
@@ -17,7 +19,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #494343;
+    color: $detail-color-dark;
 
     .icon {
       font-size: 1.5em;
@@ -25,7 +27,7 @@
 
     .text {
       margin: 0.5em 0 0 0;
-      font-family: 'Lato', sans-serif;
+      font-family: $content-font;
       font-weight: 300;
       font-size: 0.8em;
     }
