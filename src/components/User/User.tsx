@@ -4,6 +4,7 @@ import firebase from 'firebase/app'
 import { IUser } from '../../types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const User = ({ inloggedUser }: IUser) => {
   const firstCharacterOfInloggedUser = inloggedUser.charAt(0)
@@ -27,9 +28,9 @@ const User = ({ inloggedUser }: IUser) => {
         </div>
       </div>
       <div className="sign-out-button">
-        <button className="button" onClick={() => firebase.auth().signOut()}>
+        <NavLink className="link" exact to="/" onClick={() => firebase.auth().signOut()}>
           LOG OUT
-        </button>
+        </NavLink>
       </div>
     </div>
   )
