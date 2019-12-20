@@ -4,9 +4,9 @@ import GoogleMap from './GoogleMap/GoogleMap'
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <main className="home-container">
       <GoogleMap />
-    </div>
+    </main>
   )
 }
 

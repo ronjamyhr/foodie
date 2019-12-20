@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 const User = ({ inloggedUser }: IUser) => {
   const firstCharacterOfInloggedUser = inloggedUser.charAt(0)
   return (
-    <div className="user-container">
+    <main className="user-container">
       <h1 className="user-heading">USER</h1>
       <div className="card">
         <div className="user-info-wrapper">
@@ -32,7 +32,7 @@ const User = ({ inloggedUser }: IUser) => {
           LOG OUT
         </NavLink>
       </div>
-    </div>
+    </main>
   )
 }
 

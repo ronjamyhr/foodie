@@ -66,7 +66,7 @@ const Filter = ({ places }: LinkStateProps) => {
         {filtered &&
           places
             .filter(place => place.type === filterType)
-            .map(place => <div key={place.id}>{<PlacesCards result={place} />}</div>)}
+            .map(place => <div key={place.id}>{<PlacesCards place={place} />}</div>)}
       </div>
     </div>
   )

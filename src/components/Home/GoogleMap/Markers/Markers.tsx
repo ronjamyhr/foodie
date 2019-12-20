@@ -4,10 +4,10 @@ import { InfoWindow, Marker } from '@googlemap-react/core'
 import { NavLink } from 'react-router-dom'
 
 interface IProps {
-  result: any
+  place: any
 }
 
-const Markers = ({ result }: IProps) => {
+const Markers = ({ place }: IProps) => {
   const [infoWindow, setInfoWindow] = useState<boolean>(false)
 
   const handleClick = () => {
@@ -17,13 +17,13 @@ const Markers = ({ result }: IProps) => {
   return (
     <React.Fragment>
       <Marker
-        id={result.id}
-        key={result.id}
+        id={place.id}
+        key={place.id}
         onClick={handleClick}
         opts={{
           position: {
-            lat: result.latitude,
-            lng: result.longitude,
+            lat: place.latitude,
+            lng: place.longitude,
           },
           icon: {
             path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
@@ -36,7 +36,7 @@ const Markers = ({ result }: IProps) => {
       />
 
       <InfoWindow
-        anchorId={result.id}
+        anchorId={place.id}
         visible={infoWindow}
         onCloseClick={() => {
           setInfoWindow(false)
@@ -47,18 +47,18 @@ const Markers = ({ result }: IProps) => {
             <div className="info-window-image-frame">
               <img
                 className="info-window-image"
-                src={require(`./../../../../assets/${result.image}`)}
-                alt={result.name}
-                title={result.name}
+                src={require(`./../../../../assets/${place.image}`)}
+                alt={`${place.name} inspirational food and/or drinks`}
+                title={place.name}
               />
             </div>
 
-            <NavLink className="info-window-link" exact to={`/place/${result.url}`}>
-              <h1 className="info-window-heading">{result.name}</h1>
+            <NavLink className="info-window-link" exact to={`/place/${place.url}`}>
+              <h1 className="info-window-heading">{place.name}</h1>
             </NavLink>
           </div>
           <div className="info-window-wrapper-bottom">
-            <p className="info-window-adress">{result.adress}</p>
+            <p className="info-window-adress">{place.adress}</p>
           </div>
         </div>
       </InfoWindow>

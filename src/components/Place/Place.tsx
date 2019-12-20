@@ -17,12 +17,12 @@ const Place = ({ places }: LinkStateProps) => {
         places
           .filter(place => place.url === url)
           .map(place => (
-            <div className="place-wrapper" key={place.id}>
+            <article className="place-wrapper" key={place.id}>
               <div className="place-image-frame">
                 <img
                   className="place-image"
                   src={require(`./../../assets/${place.image}`)}
-                  alt={place.name}
+                  alt={`${place.name} inspirational food and/or drinks`}
                   title={place.name}
                 />
               </div>
@@ -36,11 +36,11 @@ const Place = ({ places }: LinkStateProps) => {
                 <p className="place-short-description">{place.shortDescription}</p>
                 <p className="place-long-description">{place.longDescription}</p>
               </div>
-            </div>
+            </article>
           ))}
       <div className="go-to-menu-button">
-        <a href="https://www.google.com/">
-          <button className="button"> GO TO MENU </button>
+        <a className="link" href="https://www.google.com/">
+          GO TO MENU
         </a>
       </div>
     </div>

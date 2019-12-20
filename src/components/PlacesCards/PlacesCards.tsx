@@ -3,28 +3,28 @@ import './placesCards.scss'
 import { NavLink } from 'react-router-dom'
 
 interface IProps {
-  result: any
+  place: any
 }
 
-const PlacesCards = ({ result }: IProps) => {
+const PlacesCards = ({ place }: IProps) => {
   return (
-    <div className="places-card-wrapper">
+    <article className="places-card-wrapper">
       <div className="place-image-frame">
         <img
           className="place-image"
-          src={require(`./../../assets/${result.image}`)}
-          alt={result.name}
-          title={result.name}
+          src={require(`./../../assets/${place.image}`)}
+          alt={`${place.name} inspirational food and/or drinks`}
+          title={place.name}
         />
       </div>
       <div className="place-description">
-        <NavLink className="place-link" exact to={`/place/${result.url}`}>
-          <p className="place-name">{result.name}</p>
+        <NavLink className="place-link" exact to={`/place/${place.url}`}>
+          <p className="place-name">{place.name}</p>
         </NavLink>
-        <p className="place-adress">{result.adress}</p>
-        <p className="place-short-description">{result.shortDescription}</p>
+        <p className="place-adress">{place.adress}</p>
+        <p className="place-short-description">{place.shortDescription}</p>
       </div>
-    </div>
+    </article>
   )
 }
 

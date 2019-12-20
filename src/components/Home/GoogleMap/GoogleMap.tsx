@@ -52,7 +52,7 @@ const GoogleMap = ({ places }: LinkStateProps) => {
         {places &&
           places.map(place => (
             <div key={place.id}>
-              <Markers result={place} />
+              <Markers place={place} />
             </div>
           ))}
       </GoogleMapProvider>
