@@ -9,8 +9,9 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSlidersH } from '@fortawesome/free-solid-svg-icons'
 import PlacesCards from '../PlacesCards/PlacesCards'
+import { IFavorites } from '../../types/FavoritePlaces'
 
-const AllPlaces = ({ places }: LinkStateProps) => {
+const AllPlaces = ({ places, favorites }: LinkStateProps) => {
   return (
     <main className="all-places-container">
       <h1 className="all-places-heading">ALL PLACES</h1>
@@ -21,7 +22,7 @@ const AllPlaces = ({ places }: LinkStateProps) => {
       </NavLink>
 
       <div className="all-places-wrapper">
-        {places && places.map(place => <div key={place.id}>{<PlacesCards place={place} />}</div>)}
+        {places && places.map(place => <div key={place.id}>{<PlacesCards favorites={favorites} place={place} />}</div>)}
       </div>
     </main>
   )
@@ -29,11 +30,13 @@ const AllPlaces = ({ places }: LinkStateProps) => {
 
 interface LinkStateProps {
   places: IFoodPlaces[]
+  favorites: IFavorites[]
 }
 
 const mapStateToProps = (state: AppState): LinkStateProps => {
   return {
     places: state.firestore.ordered.foodplaces,
+    favorites: state.firestore.ordered.favorites,
   }
 }
 
@@ -42,5 +45,5 @@ export default compose<any>(
     mapStateToProps,
     null
   ),
-  firestoreConnect([{ collection: 'foodplaces' }])
+  firestoreConnect([{ collection: 'foodplaces' }, { collection: 'favorites' }])
 )(AllPlaces)

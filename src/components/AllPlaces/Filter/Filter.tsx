@@ -16,11 +16,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { animateScroll as scroll } from 'react-scroll'
 import PlacesCards from '../../PlacesCards/PlacesCards'
+import { IFavorites } from '../../../types/FavoritePlaces'
 
-const Filter = ({ places }: LinkStateProps) => {
+const Filter = ({ places, favorites }: LinkStateProps) => {
   const [filtered, setFiltered] = useState<boolean>(false)
   const [filterType, setFilterType] = useState<string>('')
-  const resultsRef: any = React.createRef()
 
   const filteredComponent = (type: string) => {
     setFiltered(true)
@@ -60,13 +60,11 @@ const Filter = ({ places }: LinkStateProps) => {
       </div>
 
       <div className="filter-result-container">
-        <h2 ref={resultsRef} className="filter-result-heading">
-          {filterType}
-        </h2>
+        <h2 className="filter-result-heading">{filterType}</h2>
         {filtered &&
           places
             .filter(place => place.type === filterType)
-            .map(place => <div key={place.id}>{<PlacesCards place={place} />}</div>)}
+            .map(place => <div key={place.id}>{<PlacesCards favorites={favorites} place={place} />}</div>)}
       </div>
     </div>
   )
@@ -74,11 +72,13 @@ const Filter = ({ places }: LinkStateProps) => {
 
 interface LinkStateProps {
   places: IFoodPlaces[]
+  favorites: IFavorites[]
 }
 
 const mapStateToProps = (state: AppState): LinkStateProps => {
   return {
     places: state.firestore.ordered.foodplaces,
+    favorites: state.firestore.ordered.favorites,
   }
 }
 
@@ -87,5 +87,5 @@ export default compose<any>(
     mapStateToProps,
     null
   ),
-  firestoreConnect([{ collection: 'foodplaces' }])
+  firestoreConnect([{ collection: 'foodplaces' }, { collection: 'favorites' }])
 )(Filter)
