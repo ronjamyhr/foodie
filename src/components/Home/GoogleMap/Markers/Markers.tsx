@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import './markers.scss'
 import { InfoWindow, Marker } from '@googlemap-react/core'
 import { NavLink } from 'react-router-dom'
+import { IFoodPlaces } from '../../../../types/FoodPlaces'
 
 interface IProps {
-  place: any
+  place: IFoodPlaces
 }
 
 const Markers = ({ place }: IProps) => {

@@ -40,11 +40,9 @@ const App = ({ inloggedUser }: IUser) => {
   )
 }
 
-const mapStateToProps = (state: any): IUser => {
-  return {
-    inloggedUser: state.firebase.auth.displayName,
-  }
-}
+const mapStateToProps = (state: any): IUser => ({
+  inloggedUser: state.firebase.auth.displayName,
+})
 
 export default compose<any>(
   connect(

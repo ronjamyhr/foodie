@@ -1,12 +1,21 @@
 import React from 'react'
 import './user.scss'
 import firebase from 'firebase/app'
-import { IUser } from '../../types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { IFoodPlaces } from '../../types/FoodPlaces'
+import { IFavorites } from '../../types/FavoritePlaces'
+import { firestoreConnect } from 'react-redux-firebase'
+import PlacesCards from '../PlacesCards/PlacesCards'
 
-const User = ({ inloggedUser }: IUser) => {
+interface LinkStateProps {
+  places: IFoodPlaces[]
+  favorites: IFavorites[]
+  inloggedUser: string
+}
+
+const User = ({ inloggedUser, places, favorites }: LinkStateProps) => {
   const firstCharacterOfInloggedUser = inloggedUser.charAt(0)
   return (
     <main className="user-container">
@@ -25,6 +34,24 @@ const User = ({ inloggedUser }: IUser) => {
 
         <div className="favorite-places-wrapper">
           <h2 className="my-favorites">My favorites</h2>
+
+          <div className="all-places-wrapper">
+            {favorites &&
+              favorites
+                .filter(favorite => favorite.favorite)
+                .map(favorite => (
+                  <div key={favorite.id}>
+                    {places &&
+                      places
+                        .filter(place => place.name === favorite.placeName && inloggedUser === favorite.username)
+                        .map(place => (
+                          <div key={place.id}>
+                            <PlacesCards favorites={favorites} place={place} />
+                          </div>
+                        ))}
+                  </div>
+                ))}
+          </div>
         </div>
       </div>
       <div className="sign-out-button">
@@ -36,15 +63,16 @@ const User = ({ inloggedUser }: IUser) => {
   )
 }
 
-const mapStateToProps = (state: any): IUser => {
-  return {
-    inloggedUser: state.firebase.auth.displayName,
-  }
-}
+const mapStateToProps = (state: any): LinkStateProps => ({
+  inloggedUser: state.firebase.auth.displayName,
+  places: state.firestore.ordered.foodplaces,
+  favorites: state.firestore.ordered.favorites,
+})
 
 export default compose<any>(
   connect(
     mapStateToProps,
     null
-  )
+  ),
+  firestoreConnect([{ collection: 'foodplaces' }, { collection: 'favorites' }])
 )(User)
