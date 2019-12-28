@@ -2,6 +2,7 @@
 
 .user-container {
   width: 100vw;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,12 +23,7 @@
   .card {
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    margin: auto;
     width: 90vw;
-    min-height: 65vh;
     background-color: $card-color;
     border-radius: 10px;
 
@@ -88,13 +84,16 @@
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      height: 40vh;
-      width: 60vw;
-      margin: 0 2em;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-height: 40vh;
 
       .my-favorites {
         font-family: $headers-font;
         font-size: 1.3em;
+        margin: 1em 0 0 1em;
       }
     }
   }
