@@ -11,6 +11,11 @@ import { faSlidersH } from '@fortawesome/free-solid-svg-icons'
 import PlacesCards from '../PlacesCards/PlacesCards'
 import { IFavorites } from '../../types/FavoritePlaces'
 
+interface LinkStateProps {
+  places: IFoodPlaces[]
+  favorites: IFavorites[]
+}
+
 const AllPlaces = ({ places, favorites }: LinkStateProps) => {
   return (
     <main className="all-places-container">
@@ -28,17 +33,10 @@ const AllPlaces = ({ places, favorites }: LinkStateProps) => {
   )
 }
 
-interface LinkStateProps {
-  places: IFoodPlaces[]
-  favorites: IFavorites[]
-}
-
-const mapStateToProps = (state: AppState): LinkStateProps => {
-  return {
-    places: state.firestore.ordered.foodplaces,
-    favorites: state.firestore.ordered.favorites,
-  }
-}
+const mapStateToProps = (state: AppState): LinkStateProps => ({
+  places: state.firestore.ordered.foodplaces,
+  favorites: state.firestore.ordered.favorites,
+})
 
 export default compose<any>(
   connect(

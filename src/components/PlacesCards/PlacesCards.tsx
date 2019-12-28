@@ -9,9 +9,10 @@ import { IFavorites } from '../../types/FavoritePlaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as unfilledHeart } from '@fortawesome/free-regular-svg-icons'
+import { IFoodPlaces } from '../../types/FoodPlaces'
 
 interface IProps {
-  place: any
+  place: IFoodPlaces
   favorites: IFavorites[]
   markYourFavoritePlace: (favoritesData: any) => void
   removeFavoritePlace: (id: string) => void

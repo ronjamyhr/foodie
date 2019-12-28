@@ -8,6 +8,10 @@ import { connect } from 'react-redux'
 import { GoogleMapProvider, MapBox, Marker } from '@googlemap-react/core'
 import Markers from './Markers/Markers'
 
+interface LinkStateProps {
+  places: IFoodPlaces[]
+}
+
 const GoogleMap = ({ places }: LinkStateProps) => {
   const [center, setCenter] = useState<any>({ lat: 0, lng: 0 })
 
@@ -60,15 +64,9 @@ const GoogleMap = ({ places }: LinkStateProps) => {
   )
 }
 
-interface LinkStateProps {
-  places: IFoodPlaces[]
-}
-
-const mapStateToProps = (state: AppState): LinkStateProps => {
-  return {
-    places: state.firestore.ordered.foodplaces,
-  }
-}
+const mapStateToProps = (state: AppState): LinkStateProps => ({
+  places: state.firestore.ordered.foodplaces,
+})
 
 export default compose<any>(
   connect(

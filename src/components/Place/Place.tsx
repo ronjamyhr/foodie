@@ -7,6 +7,10 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { useParams } from 'react-router-dom'
 
+interface LinkStateProps {
+  places: IFoodPlaces[]
+}
+
 const Place = ({ places }: LinkStateProps) => {
   const { url } = useParams()
 
@@ -47,15 +51,9 @@ const Place = ({ places }: LinkStateProps) => {
   )
 }
 
-interface LinkStateProps {
-  places: IFoodPlaces[]
-}
-
-const mapStateToProps = (state: AppState): LinkStateProps => {
-  return {
-    places: state.firestore.ordered.foodplaces,
-  }
-}
+const mapStateToProps = (state: AppState): LinkStateProps => ({
+  places: state.firestore.ordered.foodplaces,
+})
 
 export default compose<any>(
   connect(

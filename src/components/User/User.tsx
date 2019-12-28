@@ -1,7 +1,6 @@
 import React from 'react'
 import './user.scss'
 import firebase from 'firebase/app'
-import { IUser } from '../../types/User'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
@@ -9,6 +8,12 @@ import { IFoodPlaces } from '../../types/FoodPlaces'
 import { IFavorites } from '../../types/FavoritePlaces'
 import { firestoreConnect } from 'react-redux-firebase'
 import PlacesCards from '../PlacesCards/PlacesCards'
+
+interface LinkStateProps {
+  places: IFoodPlaces[]
+  favorites: IFavorites[]
+  inloggedUser: string
+}
 
 const User = ({ inloggedUser, places, favorites }: LinkStateProps) => {
   const firstCharacterOfInloggedUser = inloggedUser.charAt(0)
@@ -58,19 +63,11 @@ const User = ({ inloggedUser, places, favorites }: LinkStateProps) => {
   )
 }
 
-interface LinkStateProps {
-  places: IFoodPlaces[]
-  favorites: IFavorites[]
-  inloggedUser: string
-}
-
-const mapStateToProps = (state: any): LinkStateProps => {
-  return {
-    inloggedUser: state.firebase.auth.displayName,
-    places: state.firestore.ordered.foodplaces,
-    favorites: state.firestore.ordered.favorites,
-  }
-}
+const mapStateToProps = (state: any): LinkStateProps => ({
+  inloggedUser: state.firebase.auth.displayName,
+  places: state.firestore.ordered.foodplaces,
+  favorites: state.firestore.ordered.favorites,
+})
 
 export default compose<any>(
   connect(

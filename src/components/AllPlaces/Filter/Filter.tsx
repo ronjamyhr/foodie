@@ -18,6 +18,11 @@ import { animateScroll as scroll } from 'react-scroll'
 import PlacesCards from '../../PlacesCards/PlacesCards'
 import { IFavorites } from '../../../types/FavoritePlaces'
 
+interface LinkStateProps {
+  places: IFoodPlaces[]
+  favorites: IFavorites[]
+}
+
 const Filter = ({ places, favorites }: LinkStateProps) => {
   const [filtered, setFiltered] = useState<boolean>(false)
   const [filterType, setFilterType] = useState<string>('')
@@ -70,17 +75,10 @@ const Filter = ({ places, favorites }: LinkStateProps) => {
   )
 }
 
-interface LinkStateProps {
-  places: IFoodPlaces[]
-  favorites: IFavorites[]
-}
-
-const mapStateToProps = (state: AppState): LinkStateProps => {
-  return {
-    places: state.firestore.ordered.foodplaces,
-    favorites: state.firestore.ordered.favorites,
-  }
-}
+const mapStateToProps = (state: AppState): LinkStateProps => ({
+  places: state.firestore.ordered.foodplaces,
+  favorites: state.firestore.ordered.favorites,
+})
 
 export default compose<any>(
   connect(
