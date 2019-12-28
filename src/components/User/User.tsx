@@ -43,7 +43,7 @@ const User = ({ inloggedUser, places, favorites }: LinkStateProps) => {
                   <div key={favorite.id}>
                     {places &&
                       places
-                        .filter(place => place.name === favorite.placeName)
+                        .filter(place => place.name === favorite.placeName && inloggedUser === favorite.username)
                         .map(place => (
                           <div key={place.id}>
                             <PlacesCards favorites={favorites} place={place} />
