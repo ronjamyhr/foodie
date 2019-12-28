@@ -29,7 +29,7 @@
 
   .place-description {
     margin-right: 0.5em;
-    width: 220px;
+    width: 250px;
 
     .place-link {
       text-decoration: none;
@@ -55,6 +55,20 @@
       margin: 0;
       font-family: $content-font;
       font-size: 1.1em;
+    }
+  }
+
+  .filled-marker-wrapper {
+    .filled-icon {
+      color: #c42d2d;
+      cursor: pointer;
+    }
+  }
+
+  .unfilled-marker-wrapper {
+    .unfilled-icon {
+      color: $detail-color-dark;
+      cursor: pointer;
     }
   }
 }

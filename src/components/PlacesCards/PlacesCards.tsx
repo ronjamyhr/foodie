@@ -39,8 +39,8 @@ const PlacesCards = ({ place, markYourFavoritePlace, inloggedUser, favorites, re
         <FontAwesomeIcon
           key={favorite.id}
           onClick={() => unMarkFavoritePlace(favorite.id)}
-          className="unfilled-icon"
-          icon={unfilledHeart}
+          className="filled-icon"
+          icon={faHeart}
         />
       ))
 
@@ -63,10 +63,10 @@ const PlacesCards = ({ place, markYourFavoritePlace, inloggedUser, favorites, re
       </div>
 
       {favoritePlaces && favoritePlaces.length ? (
-        <div className="unmark-favorite-wrapper">{favoritePlaces}</div>
+        <div className="filled-marker-wrapper">{favoritePlaces}</div>
       ) : (
-        <div className="mark-favorite-wrapper">
-          <FontAwesomeIcon onClick={() => markFavoritePlace()} className="filled-icon" icon={faHeart} />
+        <div className="unfilled-marker-wrapper">
+          <FontAwesomeIcon onClick={() => markFavoritePlace()} className="unfilled-icon" icon={unfilledHeart} />
         </div>
       )}
     </article>
