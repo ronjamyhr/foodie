@@ -44,11 +44,12 @@ const GoogleMap = ({ places }: LinkStateProps) => {
               lng: center.lng,
             },
             icon: {
-              path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
-              fillColor: '#4C89AB',
+              path:
+                'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+              fillColor: '#c42d2d',
               fillOpacity: 0.6,
-              strokeWeight: 0,
-              scale: 0.7,
+              strokeWeight: 2,
+              scale: 0.9,
             },
           }}
         />
