@@ -26,6 +26,7 @@ const Markers = ({ place }: IProps) => {
             lat: place.latitude,
             lng: place.longitude,
           },
+          //Icon-color and appearance of the reataurants
           icon: {
             path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
             scale: 0.6,
