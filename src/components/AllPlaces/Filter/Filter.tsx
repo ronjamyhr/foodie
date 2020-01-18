@@ -6,17 +6,10 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faGlassMartiniAlt,
-  faConciergeBell,
-  faBreadSlice,
-  faCookieBite,
-  faMugHot,
-  faHamburger,
-} from '@fortawesome/free-solid-svg-icons'
 import { animateScroll as scroll } from 'react-scroll'
 import PlacesCards from '../../PlacesCards/PlacesCards'
 import { IFavorites } from '../../../types/FavoritePlaces'
+import { filterDefinitions } from './filterArray'
 
 interface LinkStateProps {
   places: IFoodPlaces[]
@@ -38,30 +31,13 @@ const Filter = ({ places, favorites }: LinkStateProps) => {
       <h1 className="filter-heading">FILTER</h1>
 
       <div className="filter-icons-wrapper">
-        <div onClick={() => filteredComponent('drinks')} className="filter-drinks-wrapper">
-          <FontAwesomeIcon className="icon" icon={faGlassMartiniAlt} />
-          <p className="filter-text">Drinks</p>
-        </div>
-        <div onClick={() => filteredComponent('dinner')} className="filter-dinner-wrapper">
-          <FontAwesomeIcon className="icon" icon={faConciergeBell} />
-          <p className="filter-text">Dinner</p>
-        </div>
-        <div onClick={() => filteredComponent('breakfast')} className="filter-breakfast-wrapper">
-          <FontAwesomeIcon className="icon" icon={faBreadSlice} />
-          <p className="filter-text">Breakfast</p>
-        </div>
-        <div onClick={() => filteredComponent('fika')} className="filter-fika-wrapper">
-          <FontAwesomeIcon className="icon" icon={faMugHot} />
-          <p className="filter-text">Fika</p>
-        </div>
-        <div onClick={() => filteredComponent('lunch')} className="filter-lunch-wrapper">
-          <FontAwesomeIcon className="icon" icon={faHamburger} />
-          <p className="filter-text">Lunch</p>
-        </div>
-        <div onClick={() => filteredComponent('snack')} className="filter-snack-wrapper">
-          <FontAwesomeIcon className="icon" icon={faCookieBite} />
-          <p className="filter-text">Snack</p>
-        </div>
+        {filterDefinitions &&
+          filterDefinitions.map(filter => (
+            <div key={filter.id} onClick={() => filteredComponent(filter.type)} className={filter.className}>
+              <FontAwesomeIcon className="icon" icon={filter.icon} />
+              <p className="filter-text">{filter.type}</p>
+            </div>
+          ))}
       </div>
 
       <div className="filter-result-container">
