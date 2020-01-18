@@ -93,23 +93,14 @@
     }
   }
 
-  .go-to-menu-button {
-    margin: 1.1em 0;
+  .link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    background-color: transparent;
     border: none;
-    padding: 1em 0;
-    background-color: #4c89ab;
-    text-align: center;
-    width: 90vw;
-
-    .link {
-      text-decoration: none;
-      color: white;
-      font-family: 'Lato', sans-serif;
-      font-size: 1.1em;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-    }
+    outline: none;
+    cursor: pointer;
   }
 }

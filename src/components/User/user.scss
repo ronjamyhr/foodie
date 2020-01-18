@@ -98,23 +98,14 @@
     }
   }
 
-  .sign-out-button {
-    margin: 1.1em 0;
+  .link {
+    text-decoration: none;
+    color: white;
+    font-family: $content-font;
+    font-size: 1.1em;
+    background-color: transparent;
     border: none;
-    padding: 1em 0;
-    background-color: $detail-color-dark;
-    text-align: center;
-    width: 90vw;
-
-    .link {
-      text-decoration: none;
-      color: white;
-      font-family: $content-font;
-      font-size: 1.1em;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-    }
+    outline: none;
+    cursor: pointer;
   }
 }

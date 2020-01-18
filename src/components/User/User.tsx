@@ -8,6 +8,7 @@ import { IFoodPlaces } from '../../types/FoodPlaces'
 import { IFavorites } from '../../types/FavoritePlaces'
 import { firestoreConnect } from 'react-redux-firebase'
 import PlacesCards from '../PlacesCards/PlacesCards'
+import DivLink from '../Reusable/DivLink'
 
 interface LinkStateProps {
   places: IFoodPlaces[]
@@ -54,11 +55,11 @@ const User = ({ inloggedUser, places, favorites }: LinkStateProps) => {
           </div>
         </div>
       </div>
-      <div className="sign-out-button">
+      <DivLink style={{ backgroundColor: '#494343' }}>
         <NavLink className="link" exact to="/" onClick={() => firebase.auth().signOut()}>
           LOG OUT
         </NavLink>
-      </div>
+      </DivLink>
     </main>
   )
 }
