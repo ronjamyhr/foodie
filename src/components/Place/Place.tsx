@@ -6,6 +6,7 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { useParams } from 'react-router-dom'
+import DivLink from '../Reusable/DivLink'
 
 interface LinkStateProps {
   places: IFoodPlaces[]
@@ -42,11 +43,11 @@ const Place = ({ places }: LinkStateProps) => {
               </div>
             </article>
           ))}
-      <div className="go-to-menu-button">
+      <DivLink style={{ backgroundColor: '#4c89ab' }}>
         <a className="link" href="https://www.google.com/">
           GO TO MENU
         </a>
-      </div>
+      </DivLink>
     </div>
   )
 }
