@@ -4,11 +4,11 @@ import { InfoWindow, Marker } from '@googlemap-react/core'
 import { NavLink } from 'react-router-dom'
 import { IFoodPlaces } from '../../../../types/FoodPlaces'
 
-interface IProps {
+interface IPlacesCardsProps {
   place: IFoodPlaces
 }
 
-const Markers = ({ place }: IProps) => {
+const Markers = ({ place }: IPlacesCardsProps) => {
   const [infoWindow, setInfoWindow] = useState<boolean>(false)
 
   const handleClick = () => {
