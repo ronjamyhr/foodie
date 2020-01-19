@@ -4,6 +4,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
+//Login windows with google and facbook are downloaded with firebase as backend Provider_id
 const Auth = () => {
   const uiConfig = {
     signInFlow: 'popup',

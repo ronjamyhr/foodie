@@ -4,11 +4,11 @@ import { InfoWindow, Marker } from '@googlemap-react/core'
 import { NavLink } from 'react-router-dom'
 import { IFoodPlaces } from '../../../../types/FoodPlaces'
 
-interface IProps {
+interface IPlacesCardsProps {
   place: IFoodPlaces
 }
 
-const Markers = ({ place }: IProps) => {
+const Markers = ({ place }: IPlacesCardsProps) => {
   const [infoWindow, setInfoWindow] = useState<boolean>(false)
 
   const handleClick = () => {
@@ -26,6 +26,7 @@ const Markers = ({ place }: IProps) => {
             lat: place.latitude,
             lng: place.longitude,
           },
+          //Icon-color and appearance of the reataurants
           icon: {
             path: 'M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0',
             scale: 0.6,

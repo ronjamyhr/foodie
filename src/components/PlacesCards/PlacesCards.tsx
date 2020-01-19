@@ -11,7 +11,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as unfilledHeart } from '@fortawesome/free-regular-svg-icons'
 import { IFoodPlaces } from '../../types/FoodPlaces'
 
-interface IProps {
+interface IPlacesCardsProps {
   place: IFoodPlaces
   favorites: IFavorites[]
   markYourFavoritePlace: (favoritesData: any) => void
@@ -19,7 +19,13 @@ interface IProps {
   inloggedUser: string
 }
 
-const PlacesCards = ({ place, markYourFavoritePlace, inloggedUser, favorites, removeFavoritePlace }: IProps) => {
+const PlacesCards = ({
+  place,
+  markYourFavoritePlace,
+  inloggedUser,
+  favorites,
+  removeFavoritePlace,
+}: IPlacesCardsProps) => {
   const markFavoritePlace = () => {
     const favorite = true
     const placeName = place.name
