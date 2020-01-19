@@ -1,0 +1,111 @@
+@import './../../styles/variables.scss';
+
+.user-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10vh;
+
+  .user-heading {
+    font-family: $headers-font;
+    font-weight: 300;
+  }
+
+  .card {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 90vw;
+    background-color: $card-color;
+    border-radius: 10px;
+
+    .user-info-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 20vh;
+      width: 80vw;
+      margin: 0;
+
+      .user-icon-background {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #e3b061;
+
+        .user-icon {
+          color: white;
+          font-size: 2.2em;
+          font-family: $headers-font;
+        }
+      }
+
+      .user-text {
+        .user-title {
+          margin: 0 0 0.2em 0;
+          font-family: $headers-font;
+          font-weight: 600;
+          margin-left: 1em;
+        }
+        .user-name {
+          margin: 0;
+          font-family: $content-font;
+          font-size: 1.2em;
+          font-weight: 300;
+          margin-left: 1.3em;
+        }
+      }
+    }
+
+    .favorite-places-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-height: 40vh;
+
+      .my-favorites {
+        font-family: $headers-font;
+        font-size: 1.3em;
+        margin: 1em 0 0 1em;
+      }
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+    font-family: $content-font;
+    font-size: 1.1em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,44 @@
+@import './../../styles/variables.scss';
+
+.navbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+
+  .places-wrapper,
+  .user-wrapper {
+    width: 60px;
+    .fork-knife-icon,
+    .user-icon {
+      font-size: 1.5em;
+      color: #595959;
+    }
+
+    .fork-knife-text,
+    .user-text {
+      font-size: 0.8em;
+      font-weight: 300;
+      margin: 0;
+      color: #595959;
+      font-family: $content-font;
+      text-decoration: none;
+    }
+  }
+
+  .logo-wrapper {
+    .foodie-logo {
+      width: 50px;
+    }
+  }
+}

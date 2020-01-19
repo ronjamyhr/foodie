@@ -1,0 +1,106 @@
+@import './../../styles/variables.scss';
+
+.place-container {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10vh;
+
+  .place-heading {
+    font-family: $headers-font;
+    font-weight: 300;
+  }
+
+  .place-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 65vh;
+    width: 90vw;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    background-color: $card-color;
+    border-radius: 10px;
+
+    .place-image-frame {
+      margin: 1em;
+      width: 80vw;
+      height: 200px;
+      overflow: hidden;
+
+      .place-image {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
+
+    .place-info-wrapper {
+      width: 80vw;
+
+      .place-name {
+        margin-bottom: 0.5em;
+        margin-top: 0;
+        font-family: $headers-font;
+        font-weight: 600;
+        font-size: 1.3em;
+      }
+      .place-adress {
+        margin: 0;
+        font-family: $content-font;
+        font-size: 0.9em;
+        font-weight: 300;
+      }
+      .place-phone-number {
+        margin: 0;
+        font-family: $content-font;
+        font-size: 0.9em;
+        font-weight: 300;
+      }
+    }
+
+    .place-text-wrapper {
+      margin: 2em 0 1em 0;
+      width: 80vw;
+
+      .place-short-description {
+        margin: 0;
+        font-family: $content-font;
+        font-size: 1.1em;
+      }
+      .place-long-description {
+        margin: 0;
+        font-family: $content-font;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
